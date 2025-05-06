@@ -128,11 +128,32 @@ public class RadioTest {
     @Test
     public void minVolume1() {
         Radio rd = new Radio();
-        rd.setCurrentVolume(0);
+        rd.setCurrentVolume(-3);
         rd.minVolume();
         int expected = 0;
         int actual = rd.getCurrentVolume();
         Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void minVolume2() {
+        Radio rd = new Radio();
+        rd.setCurrentVolume(-1);
+        rd.minVolume();
+        int expected = 0;
+        int actual = rd.getCurrentVolume();
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+
+    public void countStation() {
+        Radio radio = new Radio(9);
+        radio.setCurrentStation(7);
+        int expected = 7;
+        int actual = radio.getCurrentStation();
+        Assertions.assertEquals(expected, actual);
+
     }
 
 }
